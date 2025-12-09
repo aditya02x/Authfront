@@ -10,10 +10,14 @@ export default function Sig() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", form);
+      const res = await axios.post(
+        "https://authbackend-1ssp.onrender.com/api/auth/register",
+        form
+      );
       alert(res.data.message);
     } catch (error) {
       alert("Something went wrong");
+      console.error(error);
     }
   };
 
@@ -49,36 +53,29 @@ export default function Sig() {
 
 const styles = {
   container: {
-    maxWidth: "400px",
-    width: "90%",           // responsive width
-    margin: "40px auto",
+    width: "350px",
+    margin: "80px auto",
     padding: "30px",
     borderRadius: "10px",
     background: "#f2f2f2",
-    textAlign: "center",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+    textAlign: "center"
   },
-  title: {
-    marginBottom: "20px",
-    fontSize: "1.8rem"
-  },
+  title: { marginBottom: "20px" },
   input: {
-    width: "95%",
+    width: "90%",
     margin: "10px 0",
     padding: "12px",
     borderRadius: "6px",
-    border: "1px solid gray",
-    fontSize: "1rem"
+    border: "1px solid gray"
   },
   button: {
-    width: "100%",
+    width: "95%",
     padding: "12px",
     background: "black",
     color: "white",
     border: "none",
     borderRadius: "6px",
     marginTop: "10px",
-    cursor: "pointer",
-    fontSize: "1rem"
+    cursor: "pointer"
   }
 };
